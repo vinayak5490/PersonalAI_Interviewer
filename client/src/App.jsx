@@ -1,21 +1,19 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router";
 import './App.css'
-import Home from './components/Home';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import HomePage from './components/Pages/HomePage'
+import Navbar from './components/shared/Navbar'
+import Footer from './components/shared/Footer'
 
 function App() {
+  const [count, setCount] = useState(0)
 
   return (
-    <div>
-      <Header/>
-      <Home/>
+    <>
+      <Navbar/>
+      <HomePage/>
       <Footer/>
-    </div>
+
+    </>
   )
 }
 
