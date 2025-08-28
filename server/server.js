@@ -4,6 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv'
 dotenv.config();
 import authRoutes from './routes/auth.routes.js'
+import interviewRoutes from './routes/interview.routes.js'
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -13,6 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 app.use('/api/auth', authRoutes);
+app.use('/api/interview', interviewRoutes);
 
 
 // Connect to MongoDB

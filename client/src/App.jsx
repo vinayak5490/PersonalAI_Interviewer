@@ -13,6 +13,7 @@ import Signup from './components/Signup';
 import UploadResume from './components/UploadResume';
 import PrivateRoute from './components/PrivateRoute';
 import Profile from './components/Profile';
+import InterviewSimulator from './components/Interview';
 function App() {
 
   return (
@@ -39,6 +40,13 @@ function App() {
             </PrivateRoute>
           }
          />
+         <Route
+         path='/interview'
+         element={
+          <PrivateRoute>
+            <InterviewSimulator/>
+          </PrivateRoute>
+         }/>
       </Routes>
       <Footer />
     </div>

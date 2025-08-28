@@ -1,6 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  const handleGetStarted = () => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      navigate('/interview');
+    } else {
+      navigate('/signup');
+    }
+  };
+
   return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-white via-indigo-50 to-purple-100 px-4">
       <div className="max-w-2xl text-center">
@@ -12,12 +24,12 @@ const Home = () => {
           Practice, get feedback, and boost your confidence with smart, interactive sessions.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="/signup"
+          <button
+            onClick={handleGetStarted}
             className="bg-gradient-to-r from-yellow-400 to-pink-400 text-indigo-900 font-semibold px-8 py-3 rounded-lg shadow-lg hover:from-yellow-300 hover:to-pink-300 transition"
           >
             Get Started
-          </a>
+          </button>
           <a
             href="/about"
             className="bg-white border border-indigo-300 text-indigo-700 font-medium px-8 py-3 rounded-lg shadow hover:bg-indigo-50 transition"
